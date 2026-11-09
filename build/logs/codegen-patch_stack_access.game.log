@@ -1,0 +1,1 @@
+patch_stack_access: 230343 guest stack accesses without volatile

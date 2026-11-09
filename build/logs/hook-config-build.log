@@ -1,0 +1,8 @@
+[1/407] Building CXX object CMakeFiles/ds3_recomp.dir/generated_nx/default/ds3_register.cpp.obj
+[2/407] Building CXX object CMakeFiles/ds3_recomp.dir/cmake_pch.hxx.gch
+[3/407] Building CXX object CMakeFiles/ds3_recomp.dir/generated_nx/default/ds3_init.cpp.obj
+[4/407] Building CXX object CMakeFiles/ds3_recomp.dir/generated_nx/default/module_registry.cpp.obj
+[5/407] Building CXX object CMakeFiles/ds3_deadspace_game_f.dir/cmake_pch.hxx.gch
+[6/407] Building CXX object CMakeFiles/ds3_recomp.dir/generated_nx/default/ds3_recomp.0.cpp.obj
+[7/407] Building CXX object CMakeFiles/ds3_deadspace_game_f.dir/generated_nx/game/ds3_init.cpp.obj
+ninja: build stopped: interrupted by user.

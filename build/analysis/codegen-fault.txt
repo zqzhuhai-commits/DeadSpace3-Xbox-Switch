@@ -1,0 +1,70 @@
+[New LWP 12999]
+[New LWP 12998]
+Error while mapping shared library sections:
+Could not open `target:/workspace/ds3-analysis/host-src/out/linux-amd64/librexruntime.so' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libm.so.6' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libstdc++.so.6' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libgcc_s.so.1' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libc.so.6' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib64/ld-linux-x86-64.so.2' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libX11-xcb.so.1' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libX11.so.6' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libxcb.so.1' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libwayland-client.so.0' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libXau.so.6' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libXdmcp.so.6' as an executable file: Input/output error
+Error while mapping shared library sections:
+Could not open `target:/lib/x86_64-linux-gnu/libffi.so.8' as an executable file: Input/output error
+
+warning: Unable to find dynamic linker breakpoint function.
+GDB will be unable to debug shared library initializers
+and track explicitly loaded dynamic code.
+
+Thread 1 "rexglue" received signal SIGSEGV, Segmentation fault.
+0x0000555923a95303 in rex::codegen::discoverPendingFunctions(rex::codegen::CodegenContext&, std::unordered_set<unsigned int, std::hash<unsigned int>, std::equal_to<unsigned int>, std::allocator<unsigned int> > const&) ()
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+   0x555923a952e0 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4416>:	mov    (%rax),%rax
+   0x555923a952e3 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4419>:	test   %rax,%rax
+   0x555923a952e6 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4422>:	je     0x555923a95300 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4448>
+   0x555923a952e8 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4424>:	cmp    0x8(%rax),%r9d
+   0x555923a952ec <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4428>:	jne    0x555923a952e0 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4416>
+   0x555923a952ee <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4430>:	jmp    0x555923a95190 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4080>
+   0x555923a952f3 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4435>:	data16 data16 data16 cs nopw 0x0(%rax,%rax,1)
+   0x555923a95300 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4448>:	mov    %r15d,%eax
+=> 0x555923a95303 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4451>:	mov    (%r14,%rax,1),%r12d
+   0x555923a95307 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4455>:	bswap  %r12d
+   0x555923a9530a <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4458>:	mov    %r12d,%eax
+   0x555923a9530d <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4461>:	and    $0xf4000000,%eax
+   0x555923a95312 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4466>:	cmp    $0x40000000,%eax
+   0x555923a95317 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4471>:	jne    0x555923a95190 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4080>
+   0x555923a9531d <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4477>:	test   $0x2,%r12b
+   0x555923a95321 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4481>:	mov    %r12d,%eax
+   0x555923a95324 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4484>:	not    %eax
+   0x555923a95326 <_ZN3rex7codegen24discoverPendingFunctionsERNS0_14CodegenContextERKSt13unordered_setIjSt4hashIjESt8equal_toIjESaIjEE+4486>:	mov    $0x0,%edx
+rax            0x13d6fc            1300220
+rbx            0x887d6320          2289918752
+rcx            0x37                55
+rdx            0x37                55
+rsi            0x88ca28f4          2294950132
+rdi            0x555950d35770      93842096478064
+r8             0x7f                127
+r9             0x88ddfff0          2296250352
+r10            0x555951e92ec0      93842114686656
+r11            0x9a82              39554
+r12            0x0                 0
+r13            0x0                 0
+r14            0x7f33ceec1904      139860491639044
+r15            0x13d6fc            1300220
+[Inferior 1 (process 12997) detached]

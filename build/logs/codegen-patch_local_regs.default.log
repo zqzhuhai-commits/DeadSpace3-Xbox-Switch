@@ -1,0 +1,1 @@
+patch_local_regs: 257 functions with registers in locals, 0 left as they were; 134 functions read a caller's non-volatile register

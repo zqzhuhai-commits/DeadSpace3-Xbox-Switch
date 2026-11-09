@@ -1,0 +1,1045 @@
+# Names and hints for the codegen (tools/codegen.sh adds them to the manifest). Addresses are the TU1 image's
+# (deadspace_game_f.xex 0.0.1.2).
+#
+# The game's setjmp and longjmp (DS2: setjmp_8295ED20, longjmp_8295EA00; matched by body). Named here the codegen turns
+# their call sites into ppc_setjmp / ppc_longjmp: without them a longjmp (a Lua error, a bad PNG or JPEG, the XGraphics
+# microcode compiler's error path) returned to its caller instead of to its setjmp. These keys belong to the module's
+# own table: tools/codegen.sh puts this file right under the [[modules]] header.
+setjmp_address = 0x88C99620
+longjmp_address = 0x88C991F0
+
+# Names for the functions the Switch code hooks, found by matching function bodies against Dead Space 2's PDB-named
+# recompiled tree (tools/match_funcs.py: 5,460 of DS2's names match a DS3 function exactly; tools/fuzzy_find.py for
+# the rest). CMake compiles each hook only when its names are here.
+
+# XDK Direct3D: every shader the game creates (src/ds3_shader_dump.cpp). DS2: 0x82220568 / 0x822201C0. Prefixed: the
+# SDK exports stubs named __imp__D3DDevice_Create*Shader, and a bare name would make the game's function that stub.
+[entrypoint.functions.0x88A2D910]
+name = "ds3_D3DDevice_CreateVertexShader"
+
+[entrypoint.functions.0x88A2D728]
+name = "ds3_D3DDevice_CreatePixelShader"
+
+# XDK: shaders built in place, with no Create*Shader (src/ds3_shader_dump.cpp). DS2: 0x82220470 / 0x82220188.
+[entrypoint.functions.0x88A2D818]
+name = "ds3_XGRegisterVertexShader"
+
+[entrypoint.functions.0x88A2CEF0]
+name = "ds3_XGRegisterPixelShader"
+
+# The Win32 SetThreadPriority (src/ds3_game_cpu.cpp). DS2: SetThreadPriority_8237C0B0, exact body match.
+[entrypoint.functions.0x88BA72D0]
+name = "ds3_SetThreadPriority"
+
+# Direct3D's "is the GPU there yet" step (src/ds3_game_cpu.cpp): 4 x 8 db16cyc, then a look at the GPU's progress; 1
+# while still waiting, and its callers (BlockOnFence and five more) call it again. gears2-nx's sub_82977688, same body.
+[entrypoint.functions.0x88A20950]
+name = "ds3_D3D_GpuWaitStep"
+
+# The game's display setup (src/ds3_resolution.cpp): writes the scene size the whole renderer reads (u16 0x890B1378
+# width, 0x890B137C height: 1152x720 in HD, 1024x768 in SD) and the back buffer's (1280x720 / 640x480).
+[entrypoint.functions.0x8895BAE0]
+name = "ds3_ConfigureDisplay"
+
+# RenderWare Audio's final compressor (src/ds3_audio.cpp): the plug-in Process Mixer::Execute calls, hot in run 6.
+[entrypoint.functions.0x886C6ED8]
+name = "ds3_rw_audio_Compressor1_Process"
+
+# The audio threads' loops (src/ds3_audio.cpp: each raises its thread above the game's once). RenderWare Audio's mixer
+# thread loop (four threads in run 20: two mix through MixWithGain, two through another DSP path) and the two XAudio
+# threads the Audio Worker's callback waits on (thread entries, reached only through the function table).
+[entrypoint.functions.0x886A8910]
+name = "ds3_rw_audio_MixerThreadLoop"
+
+[entrypoint.functions.0x88BD2DE8]
+name = "ds3_xaudio_ThreadA"
+
+[entrypoint.functions.0x88BD2E48]
+name = "ds3_xaudio_ThreadB"
+
+# RenderWare Audio's mixer leaf loops (src/ds3_audio.cpp: NEON versions), byte for byte Dead Space 2's.
+[entrypoint.functions.0x886BE8E8]
+name = "rw__audio__core__MixWithGain"
+
+[entrypoint.functions.0x886B56C8]
+name = "rw__audio__core__CopyWithGain"
+
+# Branch targets the codegen's analysis does not find on its own (tools/codegen.sh lists them; ADD_UNRESOLVED=1).
+# Each becomes a function entry, so a branch there is a call (or a tail call) instead of a trap.
+
+[entrypoint.functions.0x88728270]
+name = "unresolved_target_88728270"
+
+[entrypoint.functions.0x887B7CB4]
+name = "unresolved_target_887B7CB4"
+
+[entrypoint.functions.0x887B7CD4]
+name = "unresolved_target_887B7CD4"
+
+[entrypoint.functions.0x887B7CF4]
+name = "unresolved_target_887B7CF4"
+
+[entrypoint.functions.0x887B7D14]
+name = "unresolved_target_887B7D14"
+
+[entrypoint.functions.0x887B7D34]
+name = "unresolved_target_887B7D34"
+
+[entrypoint.functions.0x887B7D54]
+name = "unresolved_target_887B7D54"
+
+[entrypoint.functions.0x887B7D74]
+name = "unresolved_target_887B7D74"
+
+[entrypoint.functions.0x887B7D94]
+name = "unresolved_target_887B7D94"
+
+[entrypoint.functions.0x887F76D0]
+name = "unresolved_target_887F76D0"
+
+[entrypoint.functions.0x887F76EC]
+name = "unresolved_target_887F76EC"
+
+[entrypoint.functions.0x887F7784]
+name = "unresolved_target_887F7784"
+
+[entrypoint.functions.0x8880FF84]
+name = "unresolved_target_8880FF84"
+
+[entrypoint.functions.0x88810080]
+name = "unresolved_target_88810080"
+
+[entrypoint.functions.0x88810090]
+name = "unresolved_target_88810090"
+
+[entrypoint.functions.0x88827DB4]
+name = "unresolved_target_88827DB4"
+
+[entrypoint.functions.0x88827FA8]
+name = "unresolved_target_88827FA8"
+
+[entrypoint.functions.0x888280C0]
+name = "unresolved_target_888280C0"
+
+[entrypoint.functions.0x888280C8]
+name = "unresolved_target_888280C8"
+
+[entrypoint.functions.0x88828118]
+name = "unresolved_target_88828118"
+
+[entrypoint.functions.0x88838080]
+name = "unresolved_target_88838080"
+
+[entrypoint.functions.0x888380C8]
+name = "unresolved_target_888380C8"
+
+[entrypoint.functions.0x888380CC]
+name = "unresolved_target_888380CC"
+
+[entrypoint.functions.0x88838134]
+name = "unresolved_target_88838134"
+
+[entrypoint.functions.0x88838138]
+name = "unresolved_target_88838138"
+
+[entrypoint.functions.0x88838160]
+name = "unresolved_target_88838160"
+
+[entrypoint.functions.0x888381A0]
+name = "unresolved_target_888381A0"
+
+[entrypoint.functions.0x888381AC]
+name = "unresolved_target_888381AC"
+
+[entrypoint.functions.0x888381E4]
+name = "unresolved_target_888381E4"
+
+[entrypoint.functions.0x88838200]
+name = "unresolved_target_88838200"
+
+[entrypoint.functions.0x88838238]
+name = "unresolved_target_88838238"
+
+[entrypoint.functions.0x8883825C]
+name = "unresolved_target_8883825C"
+
+[entrypoint.functions.0x88838294]
+name = "unresolved_target_88838294"
+
+[entrypoint.functions.0x888382B4]
+name = "unresolved_target_888382B4"
+
+[entrypoint.functions.0x888382F0]
+name = "unresolved_target_888382F0"
+
+[entrypoint.functions.0x88838374]
+name = "unresolved_target_88838374"
+
+[entrypoint.functions.0x888383AC]
+name = "unresolved_target_888383AC"
+
+[entrypoint.functions.0x888383E0]
+name = "unresolved_target_888383E0"
+
+[entrypoint.functions.0x88838400]
+name = "unresolved_target_88838400"
+
+[entrypoint.functions.0x88838438]
+name = "unresolved_target_88838438"
+
+[entrypoint.functions.0x88838470]
+name = "unresolved_target_88838470"
+
+[entrypoint.functions.0x88838498]
+name = "unresolved_target_88838498"
+
+[entrypoint.functions.0x888384D0]
+name = "unresolved_target_888384D0"
+
+[entrypoint.functions.0x88838504]
+name = "unresolved_target_88838504"
+
+[entrypoint.functions.0x8883851C]
+name = "unresolved_target_8883851C"
+
+[entrypoint.functions.0x88838550]
+name = "unresolved_target_88838550"
+
+[entrypoint.functions.0x88838560]
+name = "unresolved_target_88838560"
+
+[entrypoint.functions.0x88838598]
+name = "unresolved_target_88838598"
+
+[entrypoint.functions.0x888385E4]
+name = "unresolved_target_888385E4"
+
+[entrypoint.functions.0x88838604]
+name = "unresolved_target_88838604"
+
+[entrypoint.functions.0x88A51990]
+name = "unresolved_target_88A51990"
+
+[entrypoint.functions.0x88A82E0C]
+name = "unresolved_target_88A82E0C"
+
+[entrypoint.functions.0x88A82EE8]
+name = "unresolved_target_88A82EE8"
+
+[entrypoint.functions.0x88AD1620]
+name = "unresolved_target_88AD1620"
+
+[entrypoint.functions.0x88AD16BC]
+name = "unresolved_target_88AD16BC"
+
+[entrypoint.functions.0x88AD17CC]
+name = "unresolved_target_88AD17CC"
+
+[entrypoint.functions.0x88AD17F0]
+name = "unresolved_target_88AD17F0"
+
+[entrypoint.functions.0x88AD1E38]
+name = "unresolved_target_88AD1E38"
+
+[entrypoint.functions.0x88AD1E5C]
+name = "unresolved_target_88AD1E5C"
+
+[entrypoint.functions.0x88AD1E68]
+name = "unresolved_target_88AD1E68"
+
+[entrypoint.functions.0x88AD1EC8]
+name = "unresolved_target_88AD1EC8"
+
+[entrypoint.functions.0x88AD1EE4]
+name = "unresolved_target_88AD1EE4"
+
+[entrypoint.functions.0x88AD1F14]
+name = "unresolved_target_88AD1F14"
+
+[entrypoint.functions.0x88AD1F18]
+name = "unresolved_target_88AD1F18"
+
+[entrypoint.functions.0x88AD1F20]
+name = "unresolved_target_88AD1F20"
+
+[entrypoint.functions.0x88AD1F2C]
+name = "unresolved_target_88AD1F2C"
+
+[entrypoint.functions.0x88AD1F54]
+name = "unresolved_target_88AD1F54"
+
+[entrypoint.functions.0x88AD1F64]
+name = "unresolved_target_88AD1F64"
+
+[entrypoint.functions.0x88AD1F98]
+name = "unresolved_target_88AD1F98"
+
+[entrypoint.functions.0x88AD1FAC]
+name = "unresolved_target_88AD1FAC"
+
+[entrypoint.functions.0x88AD1FB8]
+name = "unresolved_target_88AD1FB8"
+
+[entrypoint.functions.0x88AD2458]
+name = "unresolved_target_88AD2458"
+
+[entrypoint.functions.0x88AD2814]
+name = "unresolved_target_88AD2814"
+
+[entrypoint.functions.0x88AD2860]
+name = "unresolved_target_88AD2860"
+
+[entrypoint.functions.0x88AD2878]
+name = "unresolved_target_88AD2878"
+
+[entrypoint.functions.0x88AD28A8]
+name = "unresolved_target_88AD28A8"
+
+[entrypoint.functions.0x88AD28D0]
+name = "unresolved_target_88AD28D0"
+
+[entrypoint.functions.0x88AD28DC]
+name = "unresolved_target_88AD28DC"
+
+[entrypoint.functions.0x88AD2984]
+name = "unresolved_target_88AD2984"
+
+[entrypoint.functions.0x88AD2988]
+name = "unresolved_target_88AD2988"
+
+[entrypoint.functions.0x88AD2CB8]
+name = "unresolved_target_88AD2CB8"
+
+[entrypoint.functions.0x88AD3E6C]
+name = "unresolved_target_88AD3E6C"
+
+[entrypoint.functions.0x88AD45C4]
+name = "unresolved_target_88AD45C4"
+
+[entrypoint.functions.0x88AD46BC]
+name = "unresolved_target_88AD46BC"
+
+[entrypoint.functions.0x88AD4C1C]
+name = "unresolved_target_88AD4C1C"
+
+[entrypoint.functions.0x88AD4EA4]
+name = "unresolved_target_88AD4EA4"
+
+[entrypoint.functions.0x88AD4EE0]
+name = "unresolved_target_88AD4EE0"
+
+[entrypoint.functions.0x88AD5BB0]
+name = "unresolved_target_88AD5BB0"
+
+[entrypoint.functions.0x88AD5BB8]
+name = "unresolved_target_88AD5BB8"
+
+[entrypoint.functions.0x88AD5C2C]
+name = "unresolved_target_88AD5C2C"
+
+[entrypoint.functions.0x88AD5C78]
+name = "unresolved_target_88AD5C78"
+
+[entrypoint.functions.0x88AD5CC4]
+name = "unresolved_target_88AD5CC4"
+
+[entrypoint.functions.0x88AD5D5C]
+name = "unresolved_target_88AD5D5C"
+
+[entrypoint.functions.0x88AD5D64]
+name = "unresolved_target_88AD5D64"
+
+[entrypoint.functions.0x88AD5D94]
+name = "unresolved_target_88AD5D94"
+
+[entrypoint.functions.0x88AD5DA8]
+name = "unresolved_target_88AD5DA8"
+
+[entrypoint.functions.0x88AD5DB8]
+name = "unresolved_target_88AD5DB8"
+
+[entrypoint.functions.0x88AD5DD4]
+name = "unresolved_target_88AD5DD4"
+
+[entrypoint.functions.0x88AD633C]
+name = "unresolved_target_88AD633C"
+
+[entrypoint.functions.0x88AEF860]
+name = "unresolved_target_88AEF860"
+
+[entrypoint.functions.0x88AEF94C]
+name = "unresolved_target_88AEF94C"
+
+[entrypoint.functions.0x88B0A7C4]
+name = "unresolved_target_88B0A7C4"
+
+[entrypoint.functions.0x88B0A804]
+name = "unresolved_target_88B0A804"
+
+[entrypoint.functions.0x88B0A810]
+name = "unresolved_target_88B0A810"
+
+[entrypoint.functions.0x88B0A864]
+name = "unresolved_target_88B0A864"
+
+[entrypoint.functions.0x88B0A87C]
+name = "unresolved_target_88B0A87C"
+
+[entrypoint.functions.0x88B0C484]
+name = "unresolved_target_88B0C484"
+
+[entrypoint.functions.0x88B0C5AC]
+name = "unresolved_target_88B0C5AC"
+
+[entrypoint.functions.0x88B0C5D0]
+name = "unresolved_target_88B0C5D0"
+
+[entrypoint.functions.0x88B0C6C0]
+name = "unresolved_target_88B0C6C0"
+
+[entrypoint.functions.0x88B0C754]
+name = "unresolved_target_88B0C754"
+
+[entrypoint.functions.0x88B0C768]
+name = "unresolved_target_88B0C768"
+
+[entrypoint.functions.0x88B0D714]
+name = "unresolved_target_88B0D714"
+
+[entrypoint.functions.0x88B0FAA8]
+name = "unresolved_target_88B0FAA8"
+
+[entrypoint.functions.0x88B0FAF0]
+name = "unresolved_target_88B0FAF0"
+
+[entrypoint.functions.0x88B0FD24]
+name = "unresolved_target_88B0FD24"
+
+[entrypoint.functions.0x88B0FD9C]
+name = "unresolved_target_88B0FD9C"
+
+[entrypoint.functions.0x88B0FF00]
+name = "unresolved_target_88B0FF00"
+
+[entrypoint.functions.0x88B0FFD4]
+name = "unresolved_target_88B0FFD4"
+
+[entrypoint.functions.0x88B1025C]
+name = "unresolved_target_88B1025C"
+
+[entrypoint.functions.0x88B10534]
+name = "unresolved_target_88B10534"
+
+[entrypoint.functions.0x88B11044]
+name = "unresolved_target_88B11044"
+
+[entrypoint.functions.0x88B18A10]
+name = "unresolved_target_88B18A10"
+
+[entrypoint.functions.0x88B1FE18]
+name = "unresolved_target_88B1FE18"
+
+[entrypoint.functions.0x88B1FE54]
+name = "unresolved_target_88B1FE54"
+
+[entrypoint.functions.0x88B1FE68]
+name = "unresolved_target_88B1FE68"
+
+[entrypoint.functions.0x88B1FE98]
+name = "unresolved_target_88B1FE98"
+
+[entrypoint.functions.0x88B1FEC0]
+name = "unresolved_target_88B1FEC0"
+
+[entrypoint.functions.0x88B1FED0]
+name = "unresolved_target_88B1FED0"
+
+[entrypoint.functions.0x88B20068]
+name = "unresolved_target_88B20068"
+
+[entrypoint.functions.0x88B20564]
+name = "unresolved_target_88B20564"
+
+[entrypoint.functions.0x88B207C8]
+name = "unresolved_target_88B207C8"
+
+[entrypoint.functions.0x88B210A0]
+name = "unresolved_target_88B210A0"
+
+[entrypoint.functions.0x88B6E100]
+name = "unresolved_target_88B6E100"
+
+[entrypoint.functions.0x88B6E1F4]
+name = "unresolved_target_88B6E1F4"
+
+[entrypoint.functions.0x88B6E214]
+name = "unresolved_target_88B6E214"
+
+[entrypoint.functions.0x88B6E890]
+name = "unresolved_target_88B6E890"
+
+[entrypoint.functions.0x88B6E8B4]
+name = "unresolved_target_88B6E8B4"
+
+[entrypoint.functions.0x88B6E8EC]
+name = "unresolved_target_88B6E8EC"
+
+[entrypoint.functions.0x88B6E8F8]
+name = "unresolved_target_88B6E8F8"
+
+[entrypoint.functions.0x88BAB510]
+name = "unresolved_target_88BAB510"
+
+[entrypoint.functions.0x88BAC2C0]
+name = "unresolved_target_88BAC2C0"
+
+[entrypoint.functions.0x88BAC5B4]
+name = "unresolved_target_88BAC5B4"
+
+[entrypoint.functions.0x88BACCE4]
+name = "unresolved_target_88BACCE4"
+
+[entrypoint.functions.0x88BACD44]
+name = "unresolved_target_88BACD44"
+
+[entrypoint.functions.0x88BACE5C]
+name = "unresolved_target_88BACE5C"
+
+[entrypoint.functions.0x88BACE78]
+name = "unresolved_target_88BACE78"
+
+[entrypoint.functions.0x88BD35C8]
+name = "unresolved_target_88BD35C8"
+
+[entrypoint.functions.0x88BD35F4]
+name = "unresolved_target_88BD35F4"
+
+[entrypoint.functions.0x88BD3614]
+name = "unresolved_target_88BD3614"
+
+[entrypoint.functions.0x88BD3630]
+name = "unresolved_target_88BD3630"
+
+[entrypoint.functions.0x88C94614]
+name = "unresolved_target_88C94614"
+
+[entrypoint.functions.0x88C9666C]
+name = "unresolved_target_88C9666C"
+
+[entrypoint.functions.0x88C966B0]
+name = "unresolved_target_88C966B0"
+
+[entrypoint.functions.0x88C966E8]
+name = "unresolved_target_88C966E8"
+
+[entrypoint.functions.0x88C96754]
+name = "unresolved_target_88C96754"
+
+[entrypoint.functions.0x88C968D8]
+name = "unresolved_target_88C968D8"
+
+[entrypoint.functions.0x88C97DF4]
+name = "unresolved_target_88C97DF4"
+
+[entrypoint.functions.0x88C98158]
+name = "unresolved_target_88C98158"
+
+[entrypoint.functions.0x88C98618]
+name = "unresolved_target_88C98618"
+
+[entrypoint.functions.0x88C98854]
+name = "unresolved_target_88C98854"
+
+[entrypoint.functions.0x88C9A128]
+name = "unresolved_target_88C9A128"
+
+[entrypoint.functions.0x88C9A520]
+name = "unresolved_target_88C9A520"
+
+[entrypoint.functions.0x88C9C270]
+name = "unresolved_target_88C9C270"
+
+[entrypoint.functions.0x88C9C720]
+name = "unresolved_target_88C9C720"
+
+[entrypoint.functions.0x88C9C7C4]
+name = "unresolved_target_88C9C7C4"
+
+[entrypoint.functions.0x88C9C7DC]
+name = "unresolved_target_88C9C7DC"
+
+[entrypoint.functions.0x88C9CCE8]
+name = "unresolved_target_88C9CCE8"
+
+[entrypoint.functions.0x88C9CDA4]
+name = "unresolved_target_88C9CDA4"
+
+[entrypoint.functions.0x88C9CFB4]
+name = "unresolved_target_88C9CFB4"
+
+[entrypoint.functions.0x88C9D594]
+name = "unresolved_target_88C9D594"
+
+[entrypoint.functions.0x88C9E728]
+name = "unresolved_target_88C9E728"
+
+[entrypoint.functions.0x88C9E730]
+name = "unresolved_target_88C9E730"
+
+[entrypoint.functions.0x88C9EABC]
+name = "unresolved_target_88C9EABC"
+
+[entrypoint.functions.0x88CA3A54]
+name = "unresolved_target_88CA3A54"
+
+[entrypoint.functions.0x88CA3DE4]
+name = "unresolved_target_88CA3DE4"
+
+[entrypoint.functions.0x88CA4064]
+name = "unresolved_target_88CA4064"
+
+[entrypoint.functions.0x88CA42B0]
+name = "unresolved_target_88CA42B0"
+
+[entrypoint.functions.0x88CA4598]
+name = "unresolved_target_88CA4598"
+
+[entrypoint.functions.0x88CA4864]
+name = "unresolved_target_88CA4864"
+
+[entrypoint.functions.0x88CA4970]
+name = "unresolved_target_88CA4970"
+
+[entrypoint.functions.0x88CA49D0]
+name = "unresolved_target_88CA49D0"
+
+[entrypoint.functions.0x88CA5370]
+name = "unresolved_target_88CA5370"
+
+[entrypoint.functions.0x88CA5664]
+name = "unresolved_target_88CA5664"
+
+[entrypoint.functions.0x88CA56DC]
+name = "unresolved_target_88CA56DC"
+
+[entrypoint.functions.0x88CA56F4]
+name = "unresolved_target_88CA56F4"
+
+[entrypoint.functions.0x88CA6BA4]
+name = "unresolved_target_88CA6BA4"
+
+[entrypoint.functions.0x88CA70D0]
+name = "unresolved_target_88CA70D0"
+
+[entrypoint.functions.0x88CA7148]
+name = "unresolved_target_88CA7148"
+
+[entrypoint.functions.0x88CA7178]
+name = "unresolved_target_88CA7178"
+
+[entrypoint.functions.0x88CA762C]
+name = "unresolved_target_88CA762C"
+
+[entrypoint.functions.0x88CA776C]
+name = "unresolved_target_88CA776C"
+
+[entrypoint.functions.0x88CA7EEC]
+name = "unresolved_target_88CA7EEC"
+
+[entrypoint.functions.0x88CA7F0C]
+name = "unresolved_target_88CA7F0C"
+
+[entrypoint.functions.0x88CA9770]
+name = "unresolved_target_88CA9770"
+
+[entrypoint.functions.0x88CAB8FC]
+name = "unresolved_target_88CAB8FC"
+
+[entrypoint.functions.0x88CABD38]
+name = "unresolved_target_88CABD38"
+
+[entrypoint.functions.0x88CAD488]
+name = "unresolved_target_88CAD488"
+
+[entrypoint.functions.0x88CAD584]
+name = "unresolved_target_88CAD584"
+
+[entrypoint.functions.0x88CAD5A0]
+name = "unresolved_target_88CAD5A0"
+
+[entrypoint.functions.0x88CAD610]
+name = "unresolved_target_88CAD610"
+
+[entrypoint.functions.0x88CAD6FC]
+name = "unresolved_target_88CAD6FC"
+
+[entrypoint.functions.0x88CAD730]
+name = "unresolved_target_88CAD730"
+
+[entrypoint.functions.0x88C96680]
+name = "unresolved_target_88C96680"
+
+[entrypoint.functions.0x88C966CC]
+name = "unresolved_target_88C966CC"
+
+# Branched to with a goto from a function whose range holds it, though the label is not emitted there
+# (tools/patch_branch_traps.py).
+[entrypoint.functions.0x88760F6C]
+name = "unresolved_target_88760F6C"
+
+# Code between the functions the codegen found, reached only through pointers it did not see (vtables filled at run
+# time): tools/find_code_gaps.py over the TU1 image of deadspace_game_f.xex. Without them a call there logs "Call to
+# invalid or unregistered function" and does nothing (run 4 stopped drawing after 0x88981840).
+[entrypoint.functions.0x8852BFC8]
+name = "gap_8852BFC8"
+
+[entrypoint.functions.0x885F1F68]
+name = "gap_885F1F68"
+
+[entrypoint.functions.0x88644940]
+name = "gap_88644940"
+
+[entrypoint.functions.0x886864D8]
+name = "gap_886864D8"
+
+[entrypoint.functions.0x88760650]
+name = "gap_88760650"
+
+[entrypoint.functions.0x887606D8]
+name = "gap_887606D8"
+
+[entrypoint.functions.0x887607E8]
+name = "gap_887607E8"
+
+[entrypoint.functions.0x887787F8]
+name = "gap_887787F8"
+
+[entrypoint.functions.0x887B7C94]
+name = "gap_887B7C94"
+
+[entrypoint.functions.0x8881004C]
+name = "gap_8881004C"
+
+[entrypoint.functions.0x88828090]
+name = "gap_88828090"
+
+[entrypoint.functions.0x888456D8]
+name = "gap_888456D8"
+
+[entrypoint.functions.0x88845718]
+name = "gap_88845718"
+
+[entrypoint.functions.0x8884A4C0]
+name = "gap_8884A4C0"
+
+[entrypoint.functions.0x88981840]
+name = "gap_88981840"
+
+[entrypoint.functions.0x889C1838]
+name = "gap_889C1838"
+
+[entrypoint.functions.0x889C1868]
+name = "gap_889C1868"
+
+[entrypoint.functions.0x88A04C00]
+name = "gap_88A04C00"
+
+[entrypoint.functions.0x88A04CB0]
+name = "gap_88A04CB0"
+
+[entrypoint.functions.0x88A04CE0]
+name = "gap_88A04CE0"
+
+[entrypoint.functions.0x88A97AA8]
+name = "gap_88A97AA8"
+
+[entrypoint.functions.0x88AD65A0]
+name = "gap_88AD65A0"
+
+[entrypoint.functions.0x88B0C53C]
+name = "gap_88B0C53C"
+
+[entrypoint.functions.0x88BB6E00]
+name = "gap_88BB6E00"
+
+[entrypoint.functions.0x88BCB588]
+name = "gap_88BCB588"
+
+[entrypoint.functions.0x88BD3560]
+name = "gap_88BD3560"
+
+[entrypoint.functions.0x88BECDFC]
+name = "gap_88BECDFC"
+
+[entrypoint.functions.0x88BEE124]
+name = "gap_88BEE124"
+
+[entrypoint.functions.0x88C096D8]
+name = "gap_88C096D8"
+
+[entrypoint.functions.0x88C1B65C]
+name = "gap_88C1B65C"
+
+[entrypoint.functions.0x88C2053C]
+name = "gap_88C2053C"
+
+[entrypoint.functions.0x88C26A30]
+name = "gap_88C26A30"
+
+[entrypoint.functions.0x88C35C00]
+name = "gap_88C35C00"
+
+[entrypoint.functions.0x88C36908]
+name = "gap_88C36908"
+
+[entrypoint.functions.0x88C36A08]
+name = "gap_88C36A08"
+
+[entrypoint.functions.0x88C36B08]
+name = "gap_88C36B08"
+
+[entrypoint.functions.0x88C3D8A8]
+name = "gap_88C3D8A8"
+
+[entrypoint.functions.0x88C45388]
+name = "gap_88C45388"
+
+[entrypoint.functions.0x88C4AA64]
+name = "gap_88C4AA64"
+
+[entrypoint.functions.0x88C4FFD0]
+name = "gap_88C4FFD0"
+
+[entrypoint.functions.0x88C55240]
+name = "gap_88C55240"
+
+[entrypoint.functions.0x88C635B8]
+name = "gap_88C635B8"
+
+[entrypoint.functions.0x88C640EC]
+name = "gap_88C640EC"
+
+[entrypoint.functions.0x88C6525C]
+name = "gap_88C6525C"
+
+[entrypoint.functions.0x88C6552C]
+name = "gap_88C6552C"
+
+[entrypoint.functions.0x88C7D530]
+name = "gap_88C7D530"
+
+[entrypoint.functions.0x88C8391C]
+name = "gap_88C8391C"
+
+[entrypoint.functions.0x88C83FA8]
+name = "gap_88C83FA8"
+
+[entrypoint.functions.0x88CA7E7C]
+name = "gap_88CA7E7C"
+
+[entrypoint.functions.0x88CAD6A0]
+name = "gap_88CAD6A0"
+
+[entrypoint.functions.0x88CEC5B4]
+name = "gap_88CEC5B4"
+
+[entrypoint.functions.0x88CF7DB4]
+name = "gap_88CF7DB4"
+
+[entrypoint.functions.0x88CFE274]
+name = "gap_88CFE274"
+
+[entrypoint.functions.0x88CFE988]
+name = "gap_88CFE988"
+
+[entrypoint.functions.0x88CFF300]
+name = "gap_88CFF300"
+
+[entrypoint.functions.0x88D00234]
+name = "gap_88D00234"
+
+[entrypoint.functions.0x88D08778]
+name = "gap_88D08778"
+
+[entrypoint.functions.0x88D1576C]
+name = "gap_88D1576C"
+
+[entrypoint.functions.0x88D20560]
+name = "gap_88D20560"
+
+[entrypoint.functions.0x88D580FC]
+name = "gap_88D580FC"
+
+[entrypoint.functions.0x88D59FEC]
+name = "gap_88D59FEC"
+
+[entrypoint.functions.0x88D5DAA4]
+name = "gap_88D5DAA4"
+
+[entrypoint.functions.0x88D5EBD4]
+name = "gap_88D5EBD4"
+
+[entrypoint.functions.0x88D63DCC]
+name = "gap_88D63DCC"
+
+[entrypoint.functions.0x88D6EDE0]
+name = "gap_88D6EDE0"
+
+[entrypoint.functions.0x88D6FDA8]
+name = "gap_88D6FDA8"
+
+[entrypoint.functions.0x88D70B50]
+name = "gap_88D70B50"
+
+[entrypoint.functions.0x88D740D0]
+name = "gap_88D740D0"
+
+[entrypoint.functions.0x88D76170]
+name = "gap_88D76170"
+
+[entrypoint.functions.0x88DDD178]
+name = "gap_88DDD178"
+
+
+[entrypoint.functions.0x88AD658C]
+name = "unresolved_target_88AD658C"
+
+[entrypoint.functions.0x88BECE88]
+name = "unresolved_target_88BECE88"
+
+[entrypoint.functions.0x88BEDEBC]
+name = "unresolved_target_88BEDEBC"
+
+[entrypoint.functions.0x88BEE11C]
+name = "unresolved_target_88BEE11C"
+
+[entrypoint.functions.0x88C1B16C]
+name = "unresolved_target_88C1B16C"
+
+[entrypoint.functions.0x88C269EC]
+name = "unresolved_target_88C269EC"
+
+[entrypoint.functions.0x88C35918]
+name = "unresolved_target_88C35918"
+
+[entrypoint.functions.0x88C3CF7C]
+name = "unresolved_target_88C3CF7C"
+
+[entrypoint.functions.0x88C489D0]
+name = "unresolved_target_88C489D0"
+
+[entrypoint.functions.0x88C4E484]
+name = "unresolved_target_88C4E484"
+
+[entrypoint.functions.0x88C54210]
+name = "unresolved_target_88C54210"
+
+[entrypoint.functions.0x88C55060]
+name = "unresolved_target_88C55060"
+
+[entrypoint.functions.0x88C8387C]
+name = "unresolved_target_88C8387C"
+
+[entrypoint.functions.0x88C83C40]
+name = "unresolved_target_88C83C40"
+
+[entrypoint.functions.0x88CFE2DC]
+name = "unresolved_target_88CFE2DC"
+
+[entrypoint.functions.0x88CFFB04]
+name = "unresolved_target_88CFFB04"
+
+[entrypoint.functions.0x88D20120]
+name = "unresolved_target_88D20120"
+
+[entrypoint.functions.0x88D57214]
+name = "unresolved_target_88D57214"
+
+[entrypoint.functions.0x88D581E8]
+name = "unresolved_target_88D581E8"
+
+[entrypoint.functions.0x88D5826C]
+name = "unresolved_target_88D5826C"
+
+[entrypoint.functions.0x88D582B0]
+name = "unresolved_target_88D582B0"
+
+[entrypoint.functions.0x88D59EF4]
+name = "unresolved_target_88D59EF4"
+
+[entrypoint.functions.0x88D5DB48]
+name = "unresolved_target_88D5DB48"
+
+[entrypoint.functions.0x88D5ECB8]
+name = "unresolved_target_88D5ECB8"
+
+[entrypoint.functions.0x88D5ED88]
+name = "unresolved_target_88D5ED88"
+
+[entrypoint.functions.0x88D633C8]
+name = "unresolved_target_88D633C8"
+
+[entrypoint.functions.0x88D6E070]
+name = "unresolved_target_88D6E070"
+
+[entrypoint.functions.0x88D6EECC]
+name = "unresolved_target_88D6EECC"
+
+[entrypoint.functions.0x88D6EF70]
+name = "unresolved_target_88D6EF70"
+
+[entrypoint.functions.0x88D6EFE0]
+name = "unresolved_target_88D6EFE0"
+
+[entrypoint.functions.0x88D6FE94]
+name = "unresolved_target_88D6FE94"
+
+[entrypoint.functions.0x88D6FF38]
+name = "unresolved_target_88D6FF38"
+
+[entrypoint.functions.0x88D6FF98]
+name = "unresolved_target_88D6FF98"
+
+[entrypoint.functions.0x88D70C3C]
+name = "unresolved_target_88D70C3C"
+
+[entrypoint.functions.0x88D70CE0]
+name = "unresolved_target_88D70CE0"
+
+[entrypoint.functions.0x88D7392C]
+name = "unresolved_target_88D7392C"
+
+[entrypoint.functions.0x88D76150]
+name = "unresolved_target_88D76150"
+
+[entrypoint.functions.0x88C4E438]
+name = "unresolved_target_88C4E438"
+
+[entrypoint.functions.0x88C5420C]
+name = "unresolved_target_88C5420C"
+
+# Called through pointers at run time (run 5: "Call to invalid or unregistered function"), not found by the gap scan.
+[entrypoint.functions.0x8884A4D0]
+name = "indirect_8884A4D0"
+
+[entrypoint.functions.0x8884A4E0]
+name = "indirect_8884A4E0"
+
+[entrypoint.functions.0x88C63608]
+name = "indirect_88C63608"
+
+[entrypoint.functions.0x88C63620]
+name = "indirect_88C63620"
+
+
+# RenderWare Audio's StreamPool::AcquireStream (src/ds3_audio.cpp): fuzzy_find.py 0.961 against Dead Space 2's
+# rw::audio::core::StreamPool::AcquireStream; reads the pool's flags at +60 (DS2: +49) on entry, returns 0 for
+# "no stream", which its three callers test (cmplwi r3,0). A null pool now gets that answer (ds2-nx's crash at 0x31).
+[entrypoint.functions.0x886C1BD8]
+name = "rw__audio__core__StreamPool__AcquireStream"
+
+# XDK D3DDevice_SetGammaRamp (src/ds3_game_cpu.cpp): the one Displ_SetGamma (0x8895C6D8, fuzzy 0.933) calls, its body
+# identical to Dead Space 2's 0x8221C480 but for the device offset of the corrected ramp: +15408 here (DS2: +15216),
+# 1536 bytes copied after D3D::GammaRampCorrected (0x88A275C0, an exact match).
+[entrypoint.functions.0x88A1FBC0]
+name = "ds3_D3DDevice_SetGammaRamp"

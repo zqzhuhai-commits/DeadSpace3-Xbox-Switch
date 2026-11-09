@@ -1,0 +1,55 @@
+diff --git a/include/rex/system/kernel_state.h b/include/rex/system/kernel_state.h
+--- a/include/rex/system/kernel_state.h
++++ b/include/rex/system/kernel_state.h
+@@ -256,7 +256,7 @@
+ 
+   void RegisterRecompiledModule(const char* pe_name, const char* guest_path,
+                                 const char* shared_lib_name);
+-  std::optional<RecompiledModuleInfo> FindRecompiledModule(std::string_view guest_path);
++  std::optional<RecompiledModuleInfo> FindRecompiledModule(std::string_view guest_path, uint32_t entry_point = 0);
+ 
+   object_ref<KernelModule> GetKernelModule(const std::string_view name);
+   template <typename T>
+diff --git a/src/system/kernel_state.cpp b/src/system/kernel_state.cpp
+--- a/src/system/kernel_state.cpp
++++ b/src/system/kernel_state.cpp
+@@ -743,7 +743,7 @@
+ 
+   // Wire recompiled code (if any) before publishing to user_modules_, so a
+   // failure in this block leaves no half-loaded entry behind.
+-  auto recomp = FindRecompiledModule(path);
++  auto recomp = FindRecompiledModule(path, module->entry_point());
+   if (!recomp) {
+     REXSYS_WARN("LoadUserModule: no recompiled code registered for '{}' (its functions will not run)", path);
+   }
+@@ -858,7 +858,7 @@
+   {
+     auto global_lock = global_critical_region_.Acquire();
+ 
+-    auto recomp = FindRecompiledModule(module->path());
++    auto recomp = FindRecompiledModule(module->path(), module->entry_point());
+     if (recomp) {
+       const std::string& key = recomp->guest_path;
+       auto cleared_range = function_dispatcher_->UnregisterModule(key);
+@@ -917,9 +917,20 @@
+ }
+ 
+ std::optional<KernelState::RecompiledModuleInfo> KernelState::FindRecompiledModule(
+-    std::string_view guest_path) {
++    std::string_view guest_path, uint32_t entry_point) {
+   auto global_lock = global_critical_region_.Acquire();
+   auto normalized = NormalizeGuestPath(guest_path);
++  // DS3 Awakened ships with the same filename as the base game. Its entry
++  // point identifies the supplied DLC build; never select it by basename alone.
++  if (entry_point == 0x88C9B260 &&
++      (normalized == "deadspace_game_f.xex" ||
++       normalized.ends_with("/deadspace_game_f.xex"))) {
++    for (const auto& info : recompiled_modules_) {
++      if (info.guest_path == "pdlc/awakened.xex") return info;
++    }
++    REXSYS_ERROR("Awakened XEX has no matching recompiled module");
++    return std::nullopt;
++  }
+   for (const auto& info : recompiled_modules_) {
+     if (info.guest_path == normalized)
+       return info;

@@ -1,0 +1,66 @@
+-- The CXX compiler identification is GNU 15.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/devkitpro/devkitA64/bin/aarch64-none-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The C compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/devkitpro/devkitA64/bin/aarch64-none-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+CMake Warning at /workspace/ds3-nx-upstream/sdk/cmake/rex_version.cmake:33 (message):
+  rex_compute_version: no v* tag reachable from HEAD.  Falling back to
+  0.10.0.0-dev.unknown.  If this is a CI build, ensure tags are fetched
+  (fetch-depth: 0 + fetch-tags: true).  If this is a fork, push tags with:
+  git push <fork-remote> --tags
+Call Stack (most recent call first):
+  /workspace/ds3-nx-upstream/sdk/cmake/rex_version.cmake:171 (rex_compute_version)
+  /workspace/ds3-nx-upstream/sdk/CMakeLists.txt:216 (rex_resolve_version)
+
+
+-- xxHash build type: Release
+-- Architecture: x86_64
+-- {fmt} version: 12.1.0
+-- Build type: Release
+-- Build spdlog: 1.17.0
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Build type: Release
+-- Looking for fwrite_unlocked
+-- Looking for fwrite_unlocked - found
+-- Generating install
+-- The ASM compiler identification is GNU
+-- Found assembler: /opt/devkitpro/devkitA64/bin/aarch64-none-elf-gcc
+-- ===========================================
+-- ReXGlue Configuration Summary:
+--   Version: 0.10.0.0-dev.unknown (dev)
+--   Platform: switch-arm64
+--   Compiler: GNU 15.2.0
+--   Configurations: 
+--   Output Dir: /workspace/ds3-nx-upstream/sdk/out/switch-arm64
+--   C++ Standard: C++23
+--   Graphics: D3D12=OFF Vulkan=OFF
+--   FidelityFX: OFF
+--   Tracy: OFF
+--   Perf Counters: OFF
+-- ===========================================
+-- ds3: ReXGlue SDK from /workspace/ds3-nx-upstream/sdk
+-- Found Python3: /usr/bin/python3 (found suitable version "3.11.2", minimum required is "3.10") found components: Interpreter
+wrote /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/default/ds3_pch.h
+13 links in /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/default
+wrote /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/game/ds3_pch.h
+403 links in /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/game
+-- ds3: 4 recompiled sources for default.xex, 200 for deadspace_game_f.xex
+-- SPIRV-Cross: Finding Git version for SPIRV-Cross.
+-- Found Git: /usr/bin/git (found version "2.39.5")
+-- SPIRV-Cross: Git hash: f961303+
+-- ds3: src/ds3_shader_dump.cpp on
+-- ds3: src/ds3_audio.cpp on
+-- ds3: src/ds3_game_cpu.cpp on
+-- ds3: src/ds3_resolution.cpp on
+-- Configuring done (0.8s)
+-- Generating done (0.1s)
+-- Build files have been written to: /workspace/ds3-nx-upstream/ds3/out/sw

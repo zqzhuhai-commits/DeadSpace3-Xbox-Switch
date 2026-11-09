@@ -1,0 +1,3 @@
+ReXGlue v0.10.0 - Xbox 360 Recompilation Toolkit
+
+Failed: ds3.toml is not a manifest: no [project] section. Pre-manifest single-file configs are no longer converted automatically; see docs for the layout. (after 0.0s)

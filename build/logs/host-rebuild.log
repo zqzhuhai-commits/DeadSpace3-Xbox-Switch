@@ -1,0 +1,8 @@
+[0/2] Re-checking globbed directories...
+[1/4] Building CXX object src/codegen/CMakeFiles/rexcodegen.dir/phase_discover.cpp.o
+/workspace/ds3-analysis/host-src/src/codegen/phase_discover.cpp:274:6: warning: unused function 'functionPointerScan' [-Wunused-function]
+  274 | void functionPointerScan(CodegenContext& ctx) {
+      |      ^~~~~~~~~~~~~~~~~~~
+1 warning generated.
+[2/4] Linking CXX static library /workspace/ds3-analysis/host-src/out/linux-amd64/librexcodegen.a
+[3/4] Linking CXX executable /workspace/ds3-analysis/host-src/out/linux-amd64/rexglue

@@ -1,0 +1,21 @@
+{
+  "library_bytes": 14326036,
+  "library_entries": 1179,
+  "stages": {
+    "PS": 973,
+    "VS": 206
+  },
+  "library_hash_and_structure": "passed",
+  "cache_bytes": 27129704,
+  "cache_entries": 10083,
+  "cache_hash_and_structure": "passed",
+  "cache_compiler_matches_upstream": true,
+  "unique_library_spirv": 1173,
+  "unique_cached_spirv": 1173,
+  "library_spirv_without_any_cache_variant": 0,
+  "cache_spirv_not_in_library": 0,
+  "empty_cache_entries": 0,
+  "bad_DKSH_magic": 0,
+  "original.nro_has_expected_compiler_id": false,
+  "dlc.nro_has_expected_compiler_id": false
+}

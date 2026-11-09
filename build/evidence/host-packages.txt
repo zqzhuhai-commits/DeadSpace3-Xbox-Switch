@@ -1,0 +1,7 @@
+clang	1:19.0-63
+clang-19	1:19.1.7-3+b1
+cmake	3.31.6-2
+git	1:2.47.3-0+deb13u1
+libvulkan-dev	1.4.309.0-1
+ninja-build	1.12.1-1
+python3	3.13.5-1

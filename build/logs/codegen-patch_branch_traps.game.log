@@ -1,0 +1,1 @@
+patch_branch_traps: 81 gotos, 0 tail calls, 0 calls; 17 gotos into another function made tail calls; 0 left

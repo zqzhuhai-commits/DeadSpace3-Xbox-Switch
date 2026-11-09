@@ -1,0 +1,47 @@
+[New LWP 12999]
+[New LWP 12998]
+
+warning: "target:/workspace/ds3-analysis/host-src/out/linux-amd64/rexglue": could not open as an executable file: Input/output error.
+
+warning: `target:/workspace/ds3-analysis/host-src/out/linux-amd64/rexglue': can't open to read symbols: Input/output error.
+
+warning: Could not load vsyscall page because no executable was specified
+
+Thread 1 "rexglue" received signal SIGSEGV, Segmentation fault.
+0x0000555923a95303 in ?? ()
+
+Thread 3 (LWP 12998 "rexglue"):
+#0  0x00007f33d5c69647 in ?? ()
+#1  0x00007f33d69bdd6d in ?? ()
+#2  0x00007f33d59c26c0 in ?? ()
+#3  0x00007f33d6c66d70 in ?? ()
+#4  0x0000000000000000 in ?? ()
+
+Thread 2 (LWP 12999 "Kernel Dispatch"):
+#0  0x00007f33d5c0b72e in ?? ()
+#1  0x00007f33d5c00388 in ?? ()
+#2  0x00007f33cffff9c8 in ?? ()
+#3  0x00000000ffffffff in ?? ()
+#4  0x0000555950d0d018 in ?? ()
+#5  0x00007f33d5c009ac in ?? ()
+#6  0x00000000000000ca in ?? ()
+#7  0x3425fb7eac34ee92 in ?? ()
+#8  0x859a0b5faabdbc23 in ?? ()
+#9  0x00007f33d5c02e98 in ?? ()
+#10 0x000000004b299443 in ?? ()
+#11 0x0000555950d0d038 in ?? ()
+
+Thread 1 (LWP 12997 "rexglue"):
+#0  0x0000555923a95303 in ?? ()
+#1  0x0000555950d35a50 in ?? ()
+#2  0x000000000000005d in ?? ()
+#3  0x0000555923c56f5f in ?? ()
+#4  0x0000555923c34fe8 in ?? ()
+#5  0x88ca28f450ed78f0 in ?? ()
+#6  0x0000555923c36c50 in ?? ()
+#7  0x0000555950d35770 in ?? ()
+#8  0x002328a400000000 in ?? ()
+#9  0x0000555923c36c48 in ?? ()
+#10 0x0000555923c39959 in ?? ()
+#11 0x00007f33d5e47850 in ?? ()
+[Inferior 1 (process 12997) detached]

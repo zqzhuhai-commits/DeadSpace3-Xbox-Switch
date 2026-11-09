@@ -1,0 +1,16 @@
+# syntax=docker/dockerfile:1
+FROM debian:trixie-slim@sha256:a72b4433de1cf7d6bae0c4cee74d0547f58601a643b3375f070c51600d63b6b2
+RUN --mount=type=secret,id=proxy_ca,required=false \
+    set -eu; \
+    if [ -f /run/secrets/proxy_ca ]; then \
+      printf 'Acquire::https::CaInfo "/run/secrets/proxy_ca";\n' > /etc/apt/apt.conf.d/99-build-ca; \
+    fi; \
+    apt-get update; \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      ca-certificates clang cmake ninja-build libvulkan-dev git python3 pkg-config \
+      libx11-dev libxrandr-dev libxcursor-dev libxi-dev libxinerama-dev libwayland-dev \
+      libxkbcommon-dev libxss-dev libxtst-dev libxv-dev libasound2-dev libpulse-dev \
+      libudev-dev libdrm-dev libgbm-dev libegl1-mesa-dev libdecor-0-dev \
+      wayland-protocols libx11-xcb-dev libxcb1-dev; \
+    rm -f /etc/apt/apt.conf.d/99-build-ca; \
+    rm -rf /var/lib/apt/lists/*

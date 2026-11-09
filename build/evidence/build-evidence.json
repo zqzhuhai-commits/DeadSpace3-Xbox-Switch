@@ -1,0 +1,48 @@
+{
+  "baseline_commit": "717ae41deaf9c22059d6f27a0376d18cb443ca43",
+  "original_log_commit": "06670fdd2f768996f78131de773f736b19075935",
+  "baseline_difference": "README and INSTALL only",
+  "builder_image": "devkitpro/devkita64@sha256:1fc388c3a0d34bd2045a6dadcb1020e069d5f876a187fd705de14b4440c00282",
+  "host_rexglue": "v0.10.0 + pinned Hells Gate patch + upstream dump-image patch",
+  "game_input_hashes": {
+    "default.xex": "9111352bef686927150adb2ad9ddbf886838bf8227c7768ac4a7ddd278f515f7",
+    "deadspace_game_f.xexp": "e7c62143134a1e7e97c0803189e5db71cf9c0aa25d856a29d674044d4122f348",
+    "deadspace_game_f.xex": "5fb2f7bc20666f05c41c50f6041c3740bc717b46093cfa32cdcdbc2e47ea20db",
+    "default.xexp": "b53351fe1b9cf6cf79ba748c4fbacb3b455a8096927b6c2f83275f3e7a87f790",
+    "dlc/deadspace_game_f.xex": "53cb2646493825f3ba52c8df737b9a5bf2ddda04430d4ca1ab7404b3cb706c34"
+  },
+  "switch_validation": "build, link, NRO structure and module registration checks passed",
+  "console_validation": "not run",
+  "switch_toolchain": {
+    "devkitA64": "r29.2-1 (GCC 15.2.0)",
+    "libnx": "4.12.0-1",
+    "deko3d": "0.5.0-1"
+  },
+  "verification": {
+    "nro_bytes": 100247749,
+    "sha256": "d71cc10a4d91cb477acca893ec6be4820f7f76e296eef3a0d9740b738cb8e165",
+    "version": "1.0.1-dlc-test1",
+    "segments": [
+      [
+        0,
+        89792512
+      ],
+      [
+        89792512,
+        7385088
+      ],
+      [
+        97177600,
+        3047424
+      ]
+    ],
+    "registered_function_counts": {
+      "default": 312,
+      "game": 54996,
+      "awakened": 54926
+    },
+    "all_8_logged_missing_functions_registered": true,
+    "both_guest_modules_linked": true,
+    "console_test": "not run"
+  }
+}

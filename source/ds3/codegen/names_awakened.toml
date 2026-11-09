@@ -1,0 +1,622 @@
+# Awakened executable SHA256: 53cb2646493825f3ba52c8df737b9a5bf2ddda04430d4ca1ab7404b3cb706c34
+# Hooks matched to TU1 by normalized PPC bodies; gamma disambiguated by its callee.
+setjmp_address = 0x88C9DF50
+longjmp_address = 0x88C9DB20
+
+[entrypoint.functions.0x8828BCC0]
+name = "dlc_callback_8828BCC0"
+
+[entrypoint.functions.0x8852CEC0]
+name = "dlc_callback_8852CEC0"
+
+[entrypoint.functions.0x8852D0E0]
+name = "dlc_callback_8852D0E0"
+
+[entrypoint.functions.0x88648E00]
+name = "dlc_callback_88648E00"
+
+[entrypoint.functions.0x886ACE28]
+name = "ds3_rw_audio_MixerThreadLoop"
+
+[entrypoint.functions.0x886BA1C0]
+name = "rw__audio__core__CopyWithGain"
+
+[entrypoint.functions.0x886C3398]
+name = "rw__audio__core__MixWithGain"
+
+[entrypoint.functions.0x886C66C8]
+name = "rw__audio__core__StreamPool__AcquireStream"
+
+[entrypoint.functions.0x886CBA10]
+name = "ds3_rw_audio_Compressor1_Process"
+
+[entrypoint.functions.0x8884ED40]
+name = "dlc_callback_8884ED40"
+
+[entrypoint.functions.0x8885624C]
+name = "dlc_branch_8885624C"
+
+[entrypoint.functions.0x889606B0]
+name = "ds3_ConfigureDisplay"
+
+[entrypoint.functions.0x88A24470]
+name = "ds3_D3DDevice_SetGammaRamp"
+
+[entrypoint.functions.0x88A25200]
+name = "ds3_D3D_GpuWaitStep"
+
+[entrypoint.functions.0x88A317A0]
+name = "ds3_XGRegisterPixelShader"
+
+[entrypoint.functions.0x88A31FD8]
+name = "ds3_D3DDevice_CreatePixelShader"
+
+[entrypoint.functions.0x88A320C8]
+name = "ds3_XGRegisterVertexShader"
+
+[entrypoint.functions.0x88A321C0]
+name = "ds3_D3DDevice_CreateVertexShader"
+
+[entrypoint.functions.0x88AB14E0]
+name = "dlc_branch_88AB14E0"
+
+[entrypoint.functions.0x88B17FA8]
+name = "dlc_branch_88B17FA8"
+
+[entrypoint.functions.0x88BABB28]
+name = "ds3_SetThreadPriority"
+
+[entrypoint.functions.0x88BD7768]
+name = "ds3_xaudio_ThreadA"
+
+[entrypoint.functions.0x88BD77C8]
+name = "ds3_xaudio_ThreadB"
+
+[entrypoint.functions.0x88C67F00]
+name = "dlc_callback_88C67F00"
+
+[entrypoint.functions.0x88C67F50]
+name = "dlc_callback_88C67F50"
+
+[entrypoint.functions.0x88C67F68]
+name = "dlc_callback_88C67F68"
+
+
+[entrypoint.functions.0x887787F0]
+name = "dlc_discovered_887787F0"
+
+[entrypoint.functions.0x88778868]
+name = "dlc_discovered_88778868"
+
+[entrypoint.functions.0x887788A0]
+name = "dlc_discovered_887788A0"
+
+[entrypoint.functions.0x887788C0]
+name = "dlc_discovered_887788C0"
+
+[entrypoint.functions.0x887788D0]
+name = "dlc_discovered_887788D0"
+
+[entrypoint.functions.0x887788D8]
+name = "dlc_discovered_887788D8"
+
+[entrypoint.functions.0x887788E4]
+name = "dlc_discovered_887788E4"
+
+[entrypoint.functions.0x88788484]
+name = "dlc_discovered_88788484"
+
+[entrypoint.functions.0x887884A4]
+name = "dlc_discovered_887884A4"
+
+[entrypoint.functions.0x887F747C]
+name = "dlc_discovered_887F747C"
+
+[entrypoint.functions.0x887F7664]
+name = "dlc_discovered_887F7664"
+
+[entrypoint.functions.0x8882807C]
+name = "dlc_discovered_8882807C"
+
+[entrypoint.functions.0x88838080]
+name = "dlc_discovered_88838080"
+
+[entrypoint.functions.0x88856288]
+name = "dlc_discovered_88856288"
+
+[entrypoint.functions.0x8885628C]
+name = "dlc_discovered_8885628C"
+
+[entrypoint.functions.0x88878070]
+name = "dlc_discovered_88878070"
+
+[entrypoint.functions.0x888980D4]
+name = "dlc_discovered_888980D4"
+
+[entrypoint.functions.0x888980F4]
+name = "dlc_discovered_888980F4"
+
+[entrypoint.functions.0x88898114]
+name = "dlc_discovered_88898114"
+
+[entrypoint.functions.0x8889814C]
+name = "dlc_discovered_8889814C"
+
+[entrypoint.functions.0x88898164]
+name = "dlc_discovered_88898164"
+
+[entrypoint.functions.0x88A51B14]
+name = "dlc_discovered_88A51B14"
+
+[entrypoint.functions.0x88A766C8]
+name = "dlc_discovered_88A766C8"
+
+[entrypoint.functions.0x88A87704]
+name = "dlc_discovered_88A87704"
+
+[entrypoint.functions.0x88A877E0]
+name = "dlc_discovered_88A877E0"
+
+[entrypoint.functions.0x88AD6518]
+name = "dlc_discovered_88AD6518"
+
+[entrypoint.functions.0x88AD65B4]
+name = "dlc_discovered_88AD65B4"
+
+[entrypoint.functions.0x88AD6E50]
+name = "dlc_discovered_88AD6E50"
+
+[entrypoint.functions.0x88AD6E74]
+name = "dlc_discovered_88AD6E74"
+
+[entrypoint.functions.0x88AD6E80]
+name = "dlc_discovered_88AD6E80"
+
+[entrypoint.functions.0x88AD6EE0]
+name = "dlc_discovered_88AD6EE0"
+
+[entrypoint.functions.0x88AD6EFC]
+name = "dlc_discovered_88AD6EFC"
+
+[entrypoint.functions.0x88AD6F2C]
+name = "dlc_discovered_88AD6F2C"
+
+[entrypoint.functions.0x88AD6F30]
+name = "dlc_discovered_88AD6F30"
+
+[entrypoint.functions.0x88AD6F44]
+name = "dlc_discovered_88AD6F44"
+
+[entrypoint.functions.0x88AD6F7C]
+name = "dlc_discovered_88AD6F7C"
+
+[entrypoint.functions.0x88AD6FB0]
+name = "dlc_discovered_88AD6FB0"
+
+[entrypoint.functions.0x88AD6FC4]
+name = "dlc_discovered_88AD6FC4"
+
+[entrypoint.functions.0x88AD6FD0]
+name = "dlc_discovered_88AD6FD0"
+
+[entrypoint.functions.0x88AD7470]
+name = "dlc_discovered_88AD7470"
+
+[entrypoint.functions.0x88AD782C]
+name = "dlc_discovered_88AD782C"
+
+[entrypoint.functions.0x88AD7878]
+name = "dlc_discovered_88AD7878"
+
+[entrypoint.functions.0x88AD7890]
+name = "dlc_discovered_88AD7890"
+
+[entrypoint.functions.0x88AD78C0]
+name = "dlc_discovered_88AD78C0"
+
+[entrypoint.functions.0x88AD78E8]
+name = "dlc_discovered_88AD78E8"
+
+[entrypoint.functions.0x88AD78F4]
+name = "dlc_discovered_88AD78F4"
+
+[entrypoint.functions.0x88AD799C]
+name = "dlc_discovered_88AD799C"
+
+[entrypoint.functions.0x88AD79A0]
+name = "dlc_discovered_88AD79A0"
+
+[entrypoint.functions.0x88AD7CD0]
+name = "dlc_discovered_88AD7CD0"
+
+[entrypoint.functions.0x88AD8E84]
+name = "dlc_discovered_88AD8E84"
+
+[entrypoint.functions.0x88AD95DC]
+name = "dlc_discovered_88AD95DC"
+
+[entrypoint.functions.0x88AD96D4]
+name = "dlc_discovered_88AD96D4"
+
+[entrypoint.functions.0x88AD9C34]
+name = "dlc_discovered_88AD9C34"
+
+[entrypoint.functions.0x88AD9EBC]
+name = "dlc_discovered_88AD9EBC"
+
+[entrypoint.functions.0x88AD9EF8]
+name = "dlc_discovered_88AD9EF8"
+
+[entrypoint.functions.0x88ADABC8]
+name = "dlc_discovered_88ADABC8"
+
+[entrypoint.functions.0x88ADABD0]
+name = "dlc_discovered_88ADABD0"
+
+[entrypoint.functions.0x88ADAC44]
+name = "dlc_discovered_88ADAC44"
+
+[entrypoint.functions.0x88ADAC90]
+name = "dlc_discovered_88ADAC90"
+
+[entrypoint.functions.0x88ADACDC]
+name = "dlc_discovered_88ADACDC"
+
+[entrypoint.functions.0x88ADAD74]
+name = "dlc_discovered_88ADAD74"
+
+[entrypoint.functions.0x88ADAD7C]
+name = "dlc_discovered_88ADAD7C"
+
+[entrypoint.functions.0x88ADADC0]
+name = "dlc_discovered_88ADADC0"
+
+[entrypoint.functions.0x88ADADD0]
+name = "dlc_discovered_88ADADD0"
+
+[entrypoint.functions.0x88ADADEC]
+name = "dlc_discovered_88ADADEC"
+
+[entrypoint.functions.0x88ADB354]
+name = "dlc_discovered_88ADB354"
+
+[entrypoint.functions.0x88AF48D8]
+name = "dlc_discovered_88AF48D8"
+
+[entrypoint.functions.0x88AF49C4]
+name = "dlc_discovered_88AF49C4"
+
+[entrypoint.functions.0x88B0F1F4]
+name = "dlc_discovered_88B0F1F4"
+
+[entrypoint.functions.0x88B0F234]
+name = "dlc_discovered_88B0F234"
+
+[entrypoint.functions.0x88B0F240]
+name = "dlc_discovered_88B0F240"
+
+[entrypoint.functions.0x88B0F294]
+name = "dlc_discovered_88B0F294"
+
+[entrypoint.functions.0x88B0F2AC]
+name = "dlc_discovered_88B0F2AC"
+
+[entrypoint.functions.0x88B10EDC]
+name = "dlc_discovered_88B10EDC"
+
+[entrypoint.functions.0x88B11004]
+name = "dlc_discovered_88B11004"
+
+[entrypoint.functions.0x88B11028]
+name = "dlc_discovered_88B11028"
+
+[entrypoint.functions.0x88B11118]
+name = "dlc_discovered_88B11118"
+
+[entrypoint.functions.0x88B111AC]
+name = "dlc_discovered_88B111AC"
+
+[entrypoint.functions.0x88B111C0]
+name = "dlc_discovered_88B111C0"
+
+[entrypoint.functions.0x88B1216C]
+name = "dlc_discovered_88B1216C"
+
+[entrypoint.functions.0x88B14498]
+name = "dlc_discovered_88B14498"
+
+[entrypoint.functions.0x88B144E0]
+name = "dlc_discovered_88B144E0"
+
+[entrypoint.functions.0x88B14714]
+name = "dlc_discovered_88B14714"
+
+[entrypoint.functions.0x88B1478C]
+name = "dlc_discovered_88B1478C"
+
+[entrypoint.functions.0x88B148F0]
+name = "dlc_discovered_88B148F0"
+
+[entrypoint.functions.0x88B149C4]
+name = "dlc_discovered_88B149C4"
+
+[entrypoint.functions.0x88B14C4C]
+name = "dlc_discovered_88B14C4C"
+
+[entrypoint.functions.0x88B14F24]
+name = "dlc_discovered_88B14F24"
+
+[entrypoint.functions.0x88B15A34]
+name = "dlc_discovered_88B15A34"
+
+[entrypoint.functions.0x88B1D4B0]
+name = "dlc_discovered_88B1D4B0"
+
+[entrypoint.functions.0x88B248A8]
+name = "dlc_discovered_88B248A8"
+
+[entrypoint.functions.0x88B248E4]
+name = "dlc_discovered_88B248E4"
+
+[entrypoint.functions.0x88B248F8]
+name = "dlc_discovered_88B248F8"
+
+[entrypoint.functions.0x88B24928]
+name = "dlc_discovered_88B24928"
+
+[entrypoint.functions.0x88B24950]
+name = "dlc_discovered_88B24950"
+
+[entrypoint.functions.0x88B24960]
+name = "dlc_discovered_88B24960"
+
+[entrypoint.functions.0x88B24AF8]
+name = "dlc_discovered_88B24AF8"
+
+[entrypoint.functions.0x88B24FA4]
+name = "dlc_discovered_88B24FA4"
+
+[entrypoint.functions.0x88B25208]
+name = "dlc_discovered_88B25208"
+
+[entrypoint.functions.0x88B25AD0]
+name = "dlc_discovered_88B25AD0"
+
+[entrypoint.functions.0x88B72B88]
+name = "dlc_discovered_88B72B88"
+
+[entrypoint.functions.0x88B72C7C]
+name = "dlc_discovered_88B72C7C"
+
+[entrypoint.functions.0x88B72C9C]
+name = "dlc_discovered_88B72C9C"
+
+[entrypoint.functions.0x88B733E8]
+name = "dlc_discovered_88B733E8"
+
+[entrypoint.functions.0x88B7340C]
+name = "dlc_discovered_88B7340C"
+
+[entrypoint.functions.0x88B73444]
+name = "dlc_discovered_88B73444"
+
+[entrypoint.functions.0x88B73450]
+name = "dlc_discovered_88B73450"
+
+[entrypoint.functions.0x88BAFDB0]
+name = "dlc_discovered_88BAFDB0"
+
+[entrypoint.functions.0x88BB0B60]
+name = "dlc_discovered_88BB0B60"
+
+[entrypoint.functions.0x88BB0E54]
+name = "dlc_discovered_88BB0E54"
+
+[entrypoint.functions.0x88BB1584]
+name = "dlc_discovered_88BB1584"
+
+[entrypoint.functions.0x88BB15E4]
+name = "dlc_discovered_88BB15E4"
+
+[entrypoint.functions.0x88BB16FC]
+name = "dlc_discovered_88BB16FC"
+
+[entrypoint.functions.0x88BB1718]
+name = "dlc_discovered_88BB1718"
+
+[entrypoint.functions.0x88BD7EF8]
+name = "dlc_discovered_88BD7EF8"
+
+[entrypoint.functions.0x88BD7F24]
+name = "dlc_discovered_88BD7F24"
+
+[entrypoint.functions.0x88BD7F44]
+name = "dlc_discovered_88BD7F44"
+
+[entrypoint.functions.0x88BD7F60]
+name = "dlc_discovered_88BD7F60"
+
+[entrypoint.functions.0x88C98F4C]
+name = "dlc_discovered_88C98F4C"
+
+[entrypoint.functions.0x88C9AFE0]
+name = "dlc_discovered_88C9AFE0"
+
+[entrypoint.functions.0x88C9B084]
+name = "dlc_discovered_88C9B084"
+
+[entrypoint.functions.0x88C9B208]
+name = "dlc_discovered_88C9B208"
+
+[entrypoint.functions.0x88C9C724]
+name = "dlc_discovered_88C9C724"
+
+[entrypoint.functions.0x88C9CA88]
+name = "dlc_discovered_88C9CA88"
+
+[entrypoint.functions.0x88C9CF48]
+name = "dlc_discovered_88C9CF48"
+
+[entrypoint.functions.0x88C9D184]
+name = "dlc_discovered_88C9D184"
+
+[entrypoint.functions.0x88C9EA58]
+name = "dlc_discovered_88C9EA58"
+
+[entrypoint.functions.0x88C9EE50]
+name = "dlc_discovered_88C9EE50"
+
+[entrypoint.functions.0x88CA0BA0]
+name = "dlc_discovered_88CA0BA0"
+
+[entrypoint.functions.0x88CA1050]
+name = "dlc_discovered_88CA1050"
+
+[entrypoint.functions.0x88CA10F4]
+name = "dlc_discovered_88CA10F4"
+
+[entrypoint.functions.0x88CA110C]
+name = "dlc_discovered_88CA110C"
+
+[entrypoint.functions.0x88CA1618]
+name = "dlc_discovered_88CA1618"
+
+[entrypoint.functions.0x88CA16D4]
+name = "dlc_discovered_88CA16D4"
+
+[entrypoint.functions.0x88CA18E4]
+name = "dlc_discovered_88CA18E4"
+
+[entrypoint.functions.0x88CA1EC4]
+name = "dlc_discovered_88CA1EC4"
+
+[entrypoint.functions.0x88CA3058]
+name = "dlc_discovered_88CA3058"
+
+[entrypoint.functions.0x88CA3060]
+name = "dlc_discovered_88CA3060"
+
+[entrypoint.functions.0x88CA33EC]
+name = "dlc_discovered_88CA33EC"
+
+[entrypoint.functions.0x88CA8384]
+name = "dlc_discovered_88CA8384"
+
+[entrypoint.functions.0x88CA8714]
+name = "dlc_discovered_88CA8714"
+
+[entrypoint.functions.0x88CA8994]
+name = "dlc_discovered_88CA8994"
+
+[entrypoint.functions.0x88CA8BE0]
+name = "dlc_discovered_88CA8BE0"
+
+[entrypoint.functions.0x88CA8EC8]
+name = "dlc_discovered_88CA8EC8"
+
+[entrypoint.functions.0x88CA9194]
+name = "dlc_discovered_88CA9194"
+
+[entrypoint.functions.0x88CA92A0]
+name = "dlc_discovered_88CA92A0"
+
+[entrypoint.functions.0x88CA9300]
+name = "dlc_discovered_88CA9300"
+
+[entrypoint.functions.0x88CA9CA0]
+name = "dlc_discovered_88CA9CA0"
+
+[entrypoint.functions.0x88CA9F94]
+name = "dlc_discovered_88CA9F94"
+
+[entrypoint.functions.0x88CAA00C]
+name = "dlc_discovered_88CAA00C"
+
+[entrypoint.functions.0x88CAA024]
+name = "dlc_discovered_88CAA024"
+
+[entrypoint.functions.0x88CAB60C]
+name = "dlc_discovered_88CAB60C"
+
+[entrypoint.functions.0x88CABB38]
+name = "dlc_discovered_88CABB38"
+
+[entrypoint.functions.0x88CABBB0]
+name = "dlc_discovered_88CABBB0"
+
+[entrypoint.functions.0x88CABBE0]
+name = "dlc_discovered_88CABBE0"
+
+[entrypoint.functions.0x88CAC094]
+name = "dlc_discovered_88CAC094"
+
+[entrypoint.functions.0x88CAC1D4]
+name = "dlc_discovered_88CAC1D4"
+
+[entrypoint.functions.0x88CAC954]
+name = "dlc_discovered_88CAC954"
+
+[entrypoint.functions.0x88CAC974]
+name = "dlc_discovered_88CAC974"
+
+[entrypoint.functions.0x88CAE0A0]
+name = "dlc_discovered_88CAE0A0"
+
+[entrypoint.functions.0x88CB022C]
+name = "dlc_discovered_88CB022C"
+
+[entrypoint.functions.0x88CB0668]
+name = "dlc_discovered_88CB0668"
+
+[entrypoint.functions.0x88CB1DB8]
+name = "dlc_discovered_88CB1DB8"
+
+[entrypoint.functions.0x88CB1EB4]
+name = "dlc_discovered_88CB1EB4"
+
+[entrypoint.functions.0x88CB1ED0]
+name = "dlc_discovered_88CB1ED0"
+
+[entrypoint.functions.0x88CB1F40]
+name = "dlc_discovered_88CB1F40"
+
+[entrypoint.functions.0x88CB202C]
+name = "dlc_discovered_88CB202C"
+
+[entrypoint.functions.0x88CB2060]
+name = "dlc_discovered_88CB2060"
+
+[entrypoint.functions.0x88D03AD0]
+name = "dlc_discovered_88D03AD0"
+
+[entrypoint.functions.0x88D5E614]
+name = "dlc_discovered_88D5E614"
+
+[entrypoint.functions.0x88AD6F38]
+name = "dlc_discovered_88AD6F38"
+
+[entrypoint.functions.0x88AD6F6C]
+name = "dlc_discovered_88AD6F6C"
+
+[entrypoint.functions.0x88ADADAC]
+name = "dlc_discovered_88ADADAC"
+
+[entrypoint.functions.0x88C9AF9C]
+name = "dlc_discovered_88C9AF9C"
+
+[entrypoint.functions.0x88C9B018]
+name = "dlc_discovered_88C9B018"
+
+[entrypoint.functions.0x88D5E51C]
+name = "dlc_discovered_88D5E51C"
+
+
+[entrypoint.functions.0x88C9AFB0]
+name = "dlc_discovered_88C9AFB0"
+
+[entrypoint.functions.0x88C9AFFC]
+name = "dlc_discovered_88C9AFFC"
+
+# Cross-function branch observed by the branch validation pass.
+[entrypoint.functions.0x8876560C]
+name = "dlc_discovered_8876560C"

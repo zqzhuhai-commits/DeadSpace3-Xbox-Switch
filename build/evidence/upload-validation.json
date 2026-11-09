@@ -1,0 +1,10 @@
+{
+  "shell_syntax": "passed (all four entry scripts)",
+  "python_syntax": "passed",
+  "input_hash_validation": "passed with actual five inputs",
+  "wrong_DLC_input_rejection": "passed",
+  "portable_NRO_verifier": "passed against the existing actual test1 build",
+  "debug_archive_crc": "passed",
+  "fresh_full_rebuild": "not run",
+  "console_test": "not run"
+}

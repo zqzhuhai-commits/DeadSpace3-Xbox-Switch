@@ -1,0 +1,27 @@
+{
+  "nro_bytes": 100247749,
+  "sha256": "d71cc10a4d91cb477acca893ec6be4820f7f76e296eef3a0d9740b738cb8e165",
+  "version": "1.0.1-dlc-test1",
+  "segments": [
+    [
+      0,
+      89792512
+    ],
+    [
+      89792512,
+      7385088
+    ],
+    [
+      97177600,
+      3047424
+    ]
+  ],
+  "registered_function_counts": {
+    "default": 312,
+    "game": 54996,
+    "awakened": 54926
+  },
+  "all_8_logged_missing_functions_registered": true,
+  "both_guest_modules_linked": true,
+  "console_test": "not run"
+}

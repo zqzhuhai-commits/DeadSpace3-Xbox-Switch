@@ -21,3 +21,14 @@
 适配本次提供的 TU（Media ID `7139B889`，更新版本 `0.0.1.8`）及 Awakened（Media ID `20AF2ACB`，版本 `1.2.0.1`）。
 
 源码改动包应覆盖到上游 v1.0.1 源码，并按其中的 `ds3/DLC_TEST.md` 构建；不包含游戏可执行文件或生成的游戏源码。测试包内保留许可证与第三方说明。
+
+## 完整源码与构建过程
+
+- [下载构建记录与源码快照压缩包](https://github.com/zqzhuhai-commits/DeadSpace3-Xbox-Switch/raw/refs/heads/main/ds3-nx-test1-build-records.zip)
+- [项目源码快照及修改](source/)（SDK 和第三方依赖按固定提交获取）
+- [构建步骤、环境配置、实际过程与重建说明](build/README.md)
+- [完整保留的构建日志](build/logs/)
+- [版本、输入哈希和校验结果](build/evidence/)
+- [调试 ELF 与符号映射](debug/README.md)
+
+构建记录包含失败尝试和恢复过程；从零重建入口已整理，但尚未在全新环境中完整重跑。游戏原始可执行文件、资源和生成的游戏 C++ 不包含在源码快照中。

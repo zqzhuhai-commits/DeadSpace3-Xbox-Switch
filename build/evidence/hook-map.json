@@ -1,0 +1,18 @@
+{
+  "ds3_D3DDevice_CreateVertexShader": "sub_88A321C0",
+  "sub_88C991F0": "sub_88C9DB20",
+  "ds3_xaudio_ThreadA": "sub_88BD7768",
+  "ds3_rw_audio_Compressor1_Process": "sub_886CBA10",
+  "rw__audio__core__CopyWithGain": "sub_886BA1C0",
+  "ds3_XGRegisterVertexShader": "sub_88A320C8",
+  "rw__audio__core__StreamPool__AcquireStream": "sub_886C66C8",
+  "ds3_xaudio_ThreadB": "sub_88BD77C8",
+  "ds3_ConfigureDisplay": "sub_889606B0",
+  "ds3_rw_audio_MixerThreadLoop": "sub_886ACE28",
+  "ds3_XGRegisterPixelShader": "sub_88A317A0",
+  "ds3_SetThreadPriority": "sub_88BABB28",
+  "rw__audio__core__MixWithGain": "sub_886C3398",
+  "sub_88C99620": "sub_88C9DF50",
+  "ds3_D3DDevice_CreatePixelShader": "sub_88A31FD8",
+  "ds3_D3D_GpuWaitStep": "sub_88A25200"
+}

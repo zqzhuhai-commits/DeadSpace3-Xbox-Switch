@@ -1,0 +1,47 @@
+CMake Warning at /workspace/ds3-nx-upstream/sdk/cmake/rex_version.cmake:33 (message):
+  rex_compute_version: no v* tag reachable from HEAD.  Falling back to
+  0.10.0.0-dev.unknown.  If this is a CI build, ensure tags are fetched
+  (fetch-depth: 0 + fetch-tags: true).  If this is a fork, push tags with:
+  git push <fork-remote> --tags
+Call Stack (most recent call first):
+  /workspace/ds3-nx-upstream/sdk/cmake/rex_version.cmake:171 (rex_compute_version)
+  /workspace/ds3-nx-upstream/sdk/CMakeLists.txt:216 (rex_resolve_version)
+
+
+-- xxHash build type: Release
+-- Architecture: x86_64
+-- {fmt} version: 12.1.0
+-- Build type: Release
+-- Build spdlog: 1.17.0
+-- Build type: Release
+-- Generating install
+-- ===========================================
+-- ReXGlue Configuration Summary:
+--   Version: 0.10.0.0-dev.unknown (dev)
+--   Platform: switch-arm64
+--   Compiler: GNU 15.2.0
+--   Configurations: 
+--   Output Dir: /workspace/ds3-nx-upstream/sdk/out/switch-arm64
+--   C++ Standard: C++23
+--   Graphics: D3D12=OFF Vulkan=OFF
+--   FidelityFX: OFF
+--   Tracy: OFF
+--   Perf Counters: OFF
+-- ===========================================
+-- ds3: ReXGlue SDK from /workspace/ds3-nx-upstream/sdk
+unchanged /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/default/ds3_pch.h
+0 links in /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/default
+unchanged /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/game/ds3_pch.h
+0 links in /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/game
+-- ds3: 4 recompiled sources for default.xex, 201 for deadspace_game_f.xex
+-- SPIRV-Cross: Finding Git version for SPIRV-Cross.
+-- SPIRV-Cross: Git hash: f961303+
+-- ds3: src/ds3_shader_dump.cpp on
+-- ds3: src/ds3_audio.cpp on
+-- ds3: src/ds3_game_cpu.cpp on
+-- ds3: src/ds3_resolution.cpp on
+wrote /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/awakened/ds3_pch.h
+404 links in /workspace/ds3-nx-upstream/ds3/out/sw/generated_nx/awakened
+-- Configuring done (0.4s)
+-- Generating done (0.1s)
+-- Build files have been written to: /workspace/ds3-nx-upstream/ds3/out/sw

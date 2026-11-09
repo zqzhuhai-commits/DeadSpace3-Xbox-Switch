@@ -1,0 +1,113 @@
+Submodule 'thirdparty/FFmpeg' (https://github.com/wmarti/FFmpeg.git) registered for path 'thirdparty/FFmpeg'
+Submodule 'thirdparty/catch2' (https://github.com/catchorg/Catch2.git) registered for path 'thirdparty/catch2'
+Submodule 'thirdparty/cli11' (https://github.com/CLIUtils/CLI11) registered for path 'thirdparty/cli11'
+Submodule 'thirdparty/fmt' (https://github.com/fmtlib/fmt.git) registered for path 'thirdparty/fmt'
+Submodule 'thirdparty/glslang' (https://github.com/KhronosGroup/glslang.git) registered for path 'thirdparty/glslang'
+Submodule 'thirdparty/imgui' (https://github.com/ocornut/imgui.git) registered for path 'thirdparty/imgui'
+Submodule 'thirdparty/inja' (https://github.com/pantor/inja.git) registered for path 'thirdparty/inja'
+Submodule 'thirdparty/libmspack' (https://github.com/kyz/libmspack.git) registered for path 'thirdparty/libmspack'
+Submodule 'thirdparty/moltenvk' (https://github.com/KhronosGroup/MoltenVK.git) registered for path 'thirdparty/moltenvk'
+Submodule 'thirdparty/o1heap' (https://github.com/pavel-kirienko/o1heap.git) registered for path 'thirdparty/o1heap'
+Submodule 'thirdparty/sdl3' (https://github.com/libsdl-org/SDL) registered for path 'thirdparty/sdl3'
+Submodule 'thirdparty/simde' (https://github.com/simd-everywhere/simde.git) registered for path 'thirdparty/simde'
+Submodule 'thirdparty/spdlog' (https://github.com/gabime/spdlog.git) registered for path 'thirdparty/spdlog'
+Submodule 'thirdparty/spirv-headers' (https://github.com/KhronosGroup/SPIRV-Headers.git) registered for path 'thirdparty/spirv-headers'
+Submodule 'thirdparty/spirv-tools' (https://github.com/KhronosGroup/SPIRV-Tools.git) registered for path 'thirdparty/spirv-tools'
+Submodule 'thirdparty/tomlplusplus' (https://github.com/marzer/tomlplusplus.git) registered for path 'thirdparty/tomlplusplus'
+Submodule 'thirdparty/tracy' (https://github.com/wolfpld/tracy.git) registered for path 'thirdparty/tracy'
+Submodule 'thirdparty/utfcpp' (https://github.com/nemtrif/utfcpp.git) registered for path 'thirdparty/utfcpp'
+Submodule 'thirdparty/vulkan-headers' (https://github.com/KhronosGroup/Vulkan-Headers.git) registered for path 'thirdparty/vulkan-headers'
+Submodule 'thirdparty/vulkan-loader' (https://github.com/KhronosGroup/Vulkan-Loader.git) registered for path 'thirdparty/vulkan-loader'
+Submodule 'thirdparty/vulkan-memory-allocator' (https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git) registered for path 'thirdparty/vulkan-memory-allocator'
+Submodule 'thirdparty/xxHash' (https://github.com/Cyan4973/xxHash.git) registered for path 'thirdparty/xxHash'
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/FFmpeg'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/imgui'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/cli11'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/fmt'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/catch2'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/o1heap'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/libmspack'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/inja'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/moltenvk'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/glslang'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/spdlog'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/spirv-headers'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/tomlplusplus'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/utfcpp'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/spirv-tools'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/vulkan-headers'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/vulkan-loader'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/sdl3'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/simde'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/tracy'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/xxHash'...
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/vulkan-memory-allocator'...
+From https://github.com/wmarti/FFmpeg
+ * branch            0604b464c7cb4ebc94940cf1f324a3b26b87717c -> FETCH_HEAD
+Submodule path 'thirdparty/FFmpeg': checked out '0604b464c7cb4ebc94940cf1f324a3b26b87717c'
+From https://github.com/catchorg/Catch2
+ * branch            88abf9bf325c798c33f54f6b9220ef885b267f4f -> FETCH_HEAD
+Submodule path 'thirdparty/catch2': checked out '88abf9bf325c798c33f54f6b9220ef885b267f4f'
+From https://github.com/CLIUtils/CLI11
+ * branch            bfffd37e1f804ca4fae1caae106935791696b6a9 -> FETCH_HEAD
+Submodule path 'thirdparty/cli11': checked out 'bfffd37e1f804ca4fae1caae106935791696b6a9'
+From https://github.com/fmtlib/fmt
+ * branch            407c905e45ad75fc29bf0f9bb7c5c2fd3475976f -> FETCH_HEAD
+Submodule path 'thirdparty/fmt': checked out '407c905e45ad75fc29bf0f9bb7c5c2fd3475976f'
+From https://github.com/KhronosGroup/glslang
+ * branch            f4f1d8a352ca1908943aea2ad8c54b39b4879080 -> FETCH_HEAD
+Submodule path 'thirdparty/glslang': checked out 'f4f1d8a352ca1908943aea2ad8c54b39b4879080'
+From https://github.com/ocornut/imgui
+ * branch            6d910d5487d11ca567b61c7824b0c78c569d62f0 -> FETCH_HEAD
+Submodule path 'thirdparty/imgui': checked out '6d910d5487d11ca567b61c7824b0c78c569d62f0'
+From https://github.com/pantor/inja
+ * branch            7d1b4600b68595085a949743331c2e5673f511ea -> FETCH_HEAD
+Submodule path 'thirdparty/inja': checked out '7d1b4600b68595085a949743331c2e5673f511ea'
+From https://github.com/kyz/libmspack
+ * branch            305907723a4e7ab2018e58040059ffb5e77db837 -> FETCH_HEAD
+Submodule path 'thirdparty/libmspack': checked out '305907723a4e7ab2018e58040059ffb5e77db837'
+From https://github.com/KhronosGroup/MoltenVK
+ * branch            db445ff2042d9ce348c439ad8451112f354b8d2a -> FETCH_HEAD
+Submodule path 'thirdparty/moltenvk': checked out 'db445ff2042d9ce348c439ad8451112f354b8d2a'
+Submodule path 'thirdparty/o1heap': checked out '388a73fd9007300e5130c5fe352d9ce3288b6dde'
+From https://github.com/libsdl-org/SDL
+ * branch            8bf3b7215ad9fc3deb583c6a3a37c6c67f2e24e4 -> FETCH_HEAD
+Submodule path 'thirdparty/sdl3': checked out '8bf3b7215ad9fc3deb583c6a3a37c6c67f2e24e4'
+From https://github.com/simd-everywhere/simde
+ * branch            71fd833d9666141edcd1d3c109a80e228303d8d7 -> FETCH_HEAD
+Submodule path 'thirdparty/simde': checked out '71fd833d9666141edcd1d3c109a80e228303d8d7'
+Submodule 'munit' (https://github.com/nemequ/munit.git) registered for path 'thirdparty/simde/test/munit'
+Cloning into '/workspace/ds3-analysis/host-src/thirdparty/simde/test/munit'...
+From https://github.com/nemequ/munit
+ * branch            da8f73412998e4f1adf1100dc187533a51af77fd -> FETCH_HEAD
+Submodule path 'thirdparty/simde/test/munit': checked out 'da8f73412998e4f1adf1100dc187533a51af77fd'
+From https://github.com/gabime/spdlog
+ * branch            79524ddd08a4ec981b7fea76afd08ee05f83755d -> FETCH_HEAD
+Submodule path 'thirdparty/spdlog': checked out '79524ddd08a4ec981b7fea76afd08ee05f83755d'
+From https://github.com/KhronosGroup/SPIRV-Headers
+ * branch            29981f65241605e08b0ede4cfeb999fe3b723c6a -> FETCH_HEAD
+Submodule path 'thirdparty/spirv-headers': checked out '29981f65241605e08b0ede4cfeb999fe3b723c6a'
+From https://github.com/KhronosGroup/SPIRV-Tools
+ * branch            9a49b0883b9b635689a85b5647dbfcb223268151 -> FETCH_HEAD
+Submodule path 'thirdparty/spirv-tools': checked out '9a49b0883b9b635689a85b5647dbfcb223268151'
+From https://github.com/marzer/tomlplusplus
+ * branch            30172438cee64926dc41fdd9c11fb3ba5b2ba9de -> FETCH_HEAD
+Submodule path 'thirdparty/tomlplusplus': checked out '30172438cee64926dc41fdd9c11fb3ba5b2ba9de'
+From https://github.com/wolfpld/tracy
+ * branch            05cceee0df3b8d7c6fa87e9638af311dbabc63cb -> FETCH_HEAD
+Submodule path 'thirdparty/tracy': checked out '05cceee0df3b8d7c6fa87e9638af311dbabc63cb'
+From https://github.com/nemtrif/utfcpp
+ * branch            63d64de49fd6b829f7c8694df5ab2ee625cb7134 -> FETCH_HEAD
+Submodule path 'thirdparty/utfcpp': checked out '63d64de49fd6b829f7c8694df5ab2ee625cb7134'
+From https://github.com/KhronosGroup/Vulkan-Headers
+ * branch            e3b1eec08173d6b825cd3ac88c885a63b621504a -> FETCH_HEAD
+Submodule path 'thirdparty/vulkan-headers': checked out 'e3b1eec08173d6b825cd3ac88c885a63b621504a'
+From https://github.com/KhronosGroup/Vulkan-Loader
+ * branch            5f157b62e333c63260d05d81bf66faa216ab0fb8 -> FETCH_HEAD
+Submodule path 'thirdparty/vulkan-loader': checked out '5f157b62e333c63260d05d81bf66faa216ab0fb8'
+From https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator
+ * branch            1d8f600fd424278486eade7ed3e877c99f0846b1 -> FETCH_HEAD
+Submodule path 'thirdparty/vulkan-memory-allocator': checked out '1d8f600fd424278486eade7ed3e877c99f0846b1'
+From https://github.com/Cyan4973/xxHash
+ * branch            e626a72bc2321cd320e953a0ccf1584cad60f363 -> FETCH_HEAD
+Submodule path 'thirdparty/xxHash': checked out 'e626a72bc2321cd320e953a0ccf1584cad60f363'

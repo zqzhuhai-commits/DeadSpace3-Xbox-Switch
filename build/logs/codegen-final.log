@@ -1,0 +1,4 @@
+warning: the executables / title update are not ones this build was tested with (see ds3/PORTING.md); trying anyway
+== codegen
+codegen: 6 branch targets that are no function (see /workspace/ds3-nx-upstream/ds3/out/codegen/codegen.log, /workspace/ds3-nx-upstream/ds3/out/codegen/unresolved.toml).
+add them to ds3/codegen/names.toml / names_default.toml (ADD_UNRESOLVED=1 does it) and run again

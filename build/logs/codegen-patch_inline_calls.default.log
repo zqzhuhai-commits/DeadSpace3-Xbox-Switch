@@ -1,0 +1,1 @@
+patch_inline_calls: 540 same-file calls may be inlined, 110 helper calls inlined (36 helpers); 0 hooked functions kept as calls: 
